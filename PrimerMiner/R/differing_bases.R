@@ -2,7 +2,7 @@ differing_bases <- function(files = c("List of files"), predator_name, min_prey 
                             output = "plot") {
 
 
-  #' Find positions where prey DNA differs from that of its predator
+  #' Find positions where prey DNA differs from that of its predator, to aid in designing dietary primers. To be used after aligning sequences, as per https://www.youtube.com/watch?v=EcdTxGmcsEM
   #'
   #' @param files a vector of input files
   #' @param predator_name
@@ -104,7 +104,7 @@ N,any base,0,0,0,0,T
   all_scores <- all_scores %>%
     # Get all the nucleotides into a single column
     gather(A, C, G, `T`, key = "nucleotide", value = "proportion") %>%
-    mutate(filename = gsub(".+\/| .+|.fasta", "", filename))
+    mutate(filename = gsub(".+/| .+|.fasta", "", filename))
 
   # Make a dataframe without spiders
   no_predators <- all_scores %>%
