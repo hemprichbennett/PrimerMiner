@@ -10,6 +10,12 @@ differing_bases <- function(files = c("List of files"), predator_name, min_prey 
   #' @param max_prey the maximum proportion of predator sequences which need to have a given base for it to be considered a potentially useful site for a primer
   #' @return Either a plot summarising the results, or a list of tibbles with useful values
 
+
+
+# Vascos code which does a few things Dave doesn't fully understand -------
+
+
+
   if (is.numeric(lines)) {
     if (lines == 0) {
       deletebox <- F
@@ -66,15 +72,14 @@ N,any base,0,0,0,0,T
   }
 
 
-  # Primers in one plot!!
-  covcol <- c("Green", "Orange", "Red", "Black")
+  # # Primers in one plot!!
+  # covcol <- c("Green", "Orange", "Red", "Black")
 
 
   # Use the function on all files to make a list of all the base proportions
   # per file
 
 
-  # Run Vascos entropy function on each input file
 
   # scoreslist <- lapply(entropy, files)
   scoreslist <- list()
